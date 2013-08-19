@@ -1,0 +1,28 @@
+{
+  "name": "traffic-generator",
+  "description": "Internal tool for creating specified transactions traffic for further analysis and tracing.",
+  "version": "0.1.0",
+
+  "author": {
+    "name": "Wojciech Gawroński",
+    "email": "wgawronski@future-processing.com"
+  },
+
+  "main": "index.js",
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+
+  "scripts": {
+    "test": "grunt mocha"
+  },
+
+  "devDependencies": {
+    "should": "~1.2.0",
+    "mocha": "~1.12.0",
+    "grunt-mocha-test": "~0.6.0",
+    "grunt-contrib-jshint": "~0.6.0",
+    "grunt-contrib-watch": "~0.4.0",
+    "grunt": "~0.4.1"
+  }
+}
