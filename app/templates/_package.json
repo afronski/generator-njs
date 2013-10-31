@@ -1,6 +1,6 @@
 {
-  "name": "nodejs-application-template",
-  "description": "Template for creating Node.js module or application.",
+  "name": "<%= name %>",
+  "description": "Node.js application with Mocha, Should, Sinon.js and Istanbul attached.",
   "version": "0.1.0",
 
   "author": {
@@ -13,7 +13,7 @@
     "node": ">= 0.8.0"
   },
 
-  "repository": "https://github.com/afronski/nodejs-application-template",
+  "repository": "https://github.com/afronski/<%= name %>",
 
   "scripts": {
     "test": "grunt"

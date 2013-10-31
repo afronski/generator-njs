@@ -1,4 +1,4 @@
-/*global describe, beforeEach, it*/
+/*global describe, it*/
 "use strict";
 
 var assert = require("assert");
@@ -6,9 +6,7 @@ var assert = require("assert");
 describe("njs generator", function () {
 
   it("can be imported without blowing up", function () {
-    var app = require("../app");
-
-    assert(typeof(app) !== "undefined");
+    assert(typeof(require("../app")) !== "undefined");
   });
 
 });
