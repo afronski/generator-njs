@@ -1,10 +1,11 @@
 "use strict";
-var util = require("util");
-var path = require("path");
-var yeoman = require("yeoman-generator");
 
+var util = require("util"),
+    path = require("path"),
+    yeoman = require("yeoman-generator"),
+    NjsGenerator;
 
-var NodejsApplicationTemplateGenerator = module.exports = function NodejsApplicationTemplateGenerator(args, options, config) {
+NjsGenerator = module.exports = function NjsGenerator(args, options, config) {
   yeoman.generators.Base.apply(this, arguments);
 
   this.on("end", function () {
@@ -14,10 +15,10 @@ var NodejsApplicationTemplateGenerator = module.exports = function NodejsApplica
   this.pkg = JSON.parse(this.readFileAsString(path.join(__dirname, "../package.json")));
 };
 
-util.inherits(NodejsApplicationTemplateGenerator, yeoman.generators.Base);
+util.inherits(NjsGenerator, yeoman.generators.Base);
 
-NodejsApplicationTemplateGenerator.prototype.askFor = function askFor() {
-  var cb = this.async();
+NjsGenerator.prototype.askFor = function askFor() {
+  var callback = this.async();
 
   // have Yeoman greet the user.
   console.log(this.yeoman);
@@ -32,19 +33,18 @@ NodejsApplicationTemplateGenerator.prototype.askFor = function askFor() {
   this.prompt(prompts, function (props) {
     this.someOption = props.someOption;
 
-    cb();
+    callback();
   }.bind(this));
 };
 
-NodejsApplicationTemplateGenerator.prototype.app = function app() {
-  this.mkdir("app");
-  this.mkdir("app/templates");
+NjsGenerator.prototype.app = function app() {
+  // this.mkdir("app");
+  // this.mkdir("app/templates");
 
-  this.copy("_package.json", "package.json");
-  this.copy("_bower.json", "bower.json");
+  // this.copy("_package.json", "package.json");
+  // this.copy("_bower.json", "bower.json");
 };
 
-NodejsApplicationTemplateGenerator.prototype.projectfiles = function projectfiles() {
-  this.copy("editorconfig", ".editorconfig");
-  this.copy("jshintrc", ".jshintrc");
+NjsGenerator.prototype.projectfiles = function projectfiles() {
+  this.copy(".jshintrc", ".jshintrc");
 };
