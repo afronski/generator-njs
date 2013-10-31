@@ -3,6 +3,18 @@
 
   module.exports = function(grunt) {
     grunt.initConfig({
+      clean: {
+        coverage: [ "coverage" ]
+      },
+
+      mkdir: {
+        all: {
+          options: {
+            create: [ "coverage" ]
+          }
+        }
+      },
+
       jshint: {
         options: grunt.file.readJSON(".jshintrc"),
 
@@ -67,14 +79,26 @@
             "test/**/*.js"
           ]
         }
+      },
+
+      exec: {
+        coverage: {
+          command: "istanbul cover _mocha -- -u exports -R spec",
+          stdout: true
+        }
       }
+
     });
 
+    grunt.loadNpmTasks("grunt-contrib-clean");
     grunt.loadNpmTasks("grunt-contrib-jshint");
     grunt.loadNpmTasks("grunt-contrib-watch");
+
+    grunt.loadNpmTasks("grunt-exec");
+    grunt.loadNpmTasks("grunt-mkdir");
     grunt.loadNpmTasks("grunt-mocha-test");
 
-    grunt.registerTask("default", [ "jshint", "mochaTest" ]);
+    grunt.registerTask("default", [ "clean", "mkdir", "jshint", "mochaTest", "exec:coverage" ]);
   };
 
 } ());

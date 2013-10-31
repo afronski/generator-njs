@@ -2,10 +2,12 @@
 
 require("should");
 
+var fake = require("../src/fake");
+
 describe("Introduction", function() {
 
   it("Faked test", function() {
-    true.should.be.equal(true);
+    fake().should.be.equal(true);
   });
 
 });
