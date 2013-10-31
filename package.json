@@ -1,13 +1,13 @@
 {
-  "name": "generator-nodejs-application-template",
-  "version": "0.1.0",
+  "name": "generator-njs",
+  "version": "1.0.0",
 
-  "description": "Generator for yeoman which brings you from a template fresh Node.js application",
+  "description": "Yeoman generator which brings you a fresh Node.js application (Mocha, Should, Sinon.js, Grunt, Istanbul).",
   "keywords": [
     "yeoman-generator"
   ],
 
-  "homepage": "https://github.com/afronski/generator-nodejs-application-template",
+  "homepage": "https://github.com/afronski/generator-njs",
 
   "author": {
     "name": "Wojtek Gawroński",
@@ -19,7 +19,7 @@
 
   "repository": {
     "type": "git",
-    "url": "git://github.com/afronski/generator-nodejs-application-template.git"
+    "url": "git://github.com/afronski/generator-njs.git"
   },
 
   "scripts": {
