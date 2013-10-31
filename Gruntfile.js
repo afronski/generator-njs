@@ -25,7 +25,8 @@
 
           options: {
             globals: {
-              describe: true
+              describe: true,
+              it: true
             }
           }
         }
